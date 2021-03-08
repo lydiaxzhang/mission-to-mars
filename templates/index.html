@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>Mission to Mars</title>
     <link
      rel="stylesheet"
@@ -12,9 +12,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="jumbotron text-center">
+        <div class="jumbotron text-center" style="background-color: rgb(255, 214, 204);">
             <h1>Mission to Mars</h1>
-            <p><a class="btn btn-primary btn-lg" href="/scrape"
+            <p><a class="btn btn-danger btn-lg btn-block" href="/scrape"
                   role="button">Scrape New Data</a></p>
         </div>
         <!-- Add section for Mars News -->
@@ -39,10 +39,10 @@
                     alt="Responsive image"
                 />
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3 col-xs-12">
                 <!-- Mars Facts -->
-                <div class="row" id="mars-facts">
-                    <h4>Mars Facts</h4>
+                <div class="row" id="mars-facts" style="font-style: italic;">
+                    <h2>Mars Facts</h2>
                     {{ mars.facts | safe }}
                 </div>
             </div>
@@ -54,11 +54,11 @@
         </div>
 
         {% for hemisphere in mars.hemispheres %}
-        <div class="col-md-6">
-          <div class="thumbnail">
-            <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="...">
+        <div class="col-md-3">
+          <div class="thumbnail" style="border-color: rgb(223, 71, 89); border-radius: 25px; border-width: 7px;">
+            <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="..." style="border-radius: 12px;">
             <div class="caption">
-              <h3>{{hemisphere.title}}</h3>
+              <h4>{{hemisphere.title}}</h4>
             </div>
           </div>
         </div>
